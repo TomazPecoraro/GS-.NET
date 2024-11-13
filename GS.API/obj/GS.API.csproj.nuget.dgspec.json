@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\labsfiap\\source\\repos\\GS.API\\GS.API\\GS.API.csproj": {}
+    "C:\\Users\\labsfiap\\Source\\Repos\\GS-.NET\\GS.API\\GS.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\labsfiap\\source\\repos\\GS.API\\GS.API\\GS.API.csproj": {
+    "C:\\Users\\labsfiap\\Source\\Repos\\GS-.NET\\GS.API\\GS.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\labsfiap\\source\\repos\\GS.API\\GS.API\\GS.API.csproj",
+        "projectUniqueName": "C:\\Users\\labsfiap\\Source\\Repos\\GS-.NET\\GS.API\\GS.API.csproj",
         "projectName": "GS.API",
-        "projectPath": "C:\\Users\\labsfiap\\source\\repos\\GS.API\\GS.API\\GS.API.csproj",
+        "projectPath": "C:\\Users\\labsfiap\\Source\\Repos\\GS-.NET\\GS.API\\GS.API.csproj",
         "packagesPath": "C:\\Softwares\\Nuget",
-        "outputPath": "C:\\Users\\labsfiap\\source\\repos\\GS.API\\GS.API\\obj\\",
+        "outputPath": "C:\\Users\\labsfiap\\Source\\Repos\\GS-.NET\\GS.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

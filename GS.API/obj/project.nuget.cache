@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RZ7+RVt7cHE=",
+  "dgSpecHash": "Av8nfSmvMO0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\labsfiap\\source\\repos\\GS.API\\GS.API\\GS.API.csproj",
+  "projectFilePath": "C:\\Users\\labsfiap\\Source\\Repos\\GS-.NET\\GS.API\\JJSolution.API.csproj",
   "expectedPackageFiles": [
     "C:\\Softwares\\Nuget\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Softwares\\Nuget\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

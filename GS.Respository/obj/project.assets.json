@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\labsfiap\\source\\repos\\GS.API\\GS.Respository\\GS.Respository.csproj",
-      "projectName": "GS.Respository",
-      "projectPath": "C:\\Users\\labsfiap\\source\\repos\\GS.API\\GS.Respository\\GS.Respository.csproj",
+      "projectUniqueName": "C:\\Users\\labsfiap\\Source\\Repos\\GS-.NET\\GS.Respository\\JJSolution.Respository.csproj",
+      "projectName": "JJSolution.Respository",
+      "projectPath": "C:\\Users\\labsfiap\\Source\\Repos\\GS-.NET\\GS.Respository\\JJSolution.Respository.csproj",
       "packagesPath": "C:\\Softwares\\Nuget",
-      "outputPath": "C:\\Users\\labsfiap\\source\\repos\\GS.API\\GS.Respository\\obj\\",
+      "outputPath": "C:\\Users\\labsfiap\\Source\\Repos\\GS-.NET\\GS.Respository\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\labsfiap\\source\\repos\\GS.API\\GS.Database\\GS.Database.csproj": {}
+    "C:\\Users\\labsfiap\\Source\\Repos\\GS-.NET\\GS.Database\\GS.Database.csproj": {}
   },
   "projects": {
-    "C:\\Users\\labsfiap\\source\\repos\\GS.API\\GS.Database\\GS.Database.csproj": {
+    "C:\\Users\\labsfiap\\Source\\Repos\\GS-.NET\\GS.Database\\GS.Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\labsfiap\\source\\repos\\GS.API\\GS.Database\\GS.Database.csproj",
+        "projectUniqueName": "C:\\Users\\labsfiap\\Source\\Repos\\GS-.NET\\GS.Database\\GS.Database.csproj",
         "projectName": "GS.Database",
-        "projectPath": "C:\\Users\\labsfiap\\source\\repos\\GS.API\\GS.Database\\GS.Database.csproj",
+        "projectPath": "C:\\Users\\labsfiap\\Source\\Repos\\GS-.NET\\GS.Database\\GS.Database.csproj",
         "packagesPath": "C:\\Softwares\\Nuget",
-        "outputPath": "C:\\Users\\labsfiap\\source\\repos\\GS.API\\GS.Database\\obj\\",
+        "outputPath": "C:\\Users\\labsfiap\\Source\\Repos\\GS-.NET\\GS.Database\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

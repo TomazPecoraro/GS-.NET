@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\labsfiap\\source\\repos\\GS.API\\GS.Models\\GS.Models.csproj": {}
+    "C:\\Users\\labsfiap\\Source\\Repos\\GS-.NET\\GS.Models\\GS.Models.csproj": {}
   },
   "projects": {
-    "C:\\Users\\labsfiap\\source\\repos\\GS.API\\GS.Models\\GS.Models.csproj": {
+    "C:\\Users\\labsfiap\\Source\\Repos\\GS-.NET\\GS.Models\\GS.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\labsfiap\\source\\repos\\GS.API\\GS.Models\\GS.Models.csproj",
+        "projectUniqueName": "C:\\Users\\labsfiap\\Source\\Repos\\GS-.NET\\GS.Models\\GS.Models.csproj",
         "projectName": "GS.Models",
-        "projectPath": "C:\\Users\\labsfiap\\source\\repos\\GS.API\\GS.Models\\GS.Models.csproj",
+        "projectPath": "C:\\Users\\labsfiap\\Source\\Repos\\GS-.NET\\GS.Models\\GS.Models.csproj",
         "packagesPath": "C:\\Softwares\\Nuget",
-        "outputPath": "C:\\Users\\labsfiap\\source\\repos\\GS.API\\GS.Models\\obj\\",
+        "outputPath": "C:\\Users\\labsfiap\\Source\\Repos\\GS-.NET\\GS.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
