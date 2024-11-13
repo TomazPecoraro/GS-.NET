@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JJSolution.Database", "JJSo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JJSolution.Services", "JJSolution.Services\JJSolution.Services.csproj", "{1D1A57F8-E535-499F-AC5D-08F4D21BB9B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJSolution.ML", "JJSolution.API\JJSolution.ML\JJSolution.ML.csproj", "{CBF55018-C812-49B5-98F9-4E6EC29AC44E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{1D1A57F8-E535-499F-AC5D-08F4D21BB9B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D1A57F8-E535-499F-AC5D-08F4D21BB9B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D1A57F8-E535-499F-AC5D-08F4D21BB9B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBF55018-C812-49B5-98F9-4E6EC29AC44E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBF55018-C812-49B5-98F9-4E6EC29AC44E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBF55018-C812-49B5-98F9-4E6EC29AC44E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBF55018-C812-49B5-98F9-4E6EC29AC44E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
