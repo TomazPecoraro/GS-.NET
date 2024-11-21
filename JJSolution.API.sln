@@ -13,8 +13,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JJSolution.Database", "JJSo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JJSolution.Services", "JJSolution.Services\JJSolution.Services.csproj", "{1D1A57F8-E535-499F-AC5D-08F4D21BB9B1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JJSolution.ML", "JJSolution.API\JJSolution.ML\JJSolution.ML.csproj", "{CBF55018-C812-49B5-98F9-4E6EC29AC44E}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JJSolution.Test", "JJSolution.Test\JJSolution.Test.csproj", "{EBB0601E-3FA6-4F7D-B39F-7B01EAB2368F}"
 EndProject
 Global
@@ -43,10 +41,6 @@ Global
 		{1D1A57F8-E535-499F-AC5D-08F4D21BB9B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D1A57F8-E535-499F-AC5D-08F4D21BB9B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D1A57F8-E535-499F-AC5D-08F4D21BB9B1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CBF55018-C812-49B5-98F9-4E6EC29AC44E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CBF55018-C812-49B5-98F9-4E6EC29AC44E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CBF55018-C812-49B5-98F9-4E6EC29AC44E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CBF55018-C812-49B5-98F9-4E6EC29AC44E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EBB0601E-3FA6-4F7D-B39F-7B01EAB2368F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EBB0601E-3FA6-4F7D-B39F-7B01EAB2368F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBB0601E-3FA6-4F7D-B39F-7B01EAB2368F}.Release|Any CPU.ActiveCfg = Release|Any CPU
