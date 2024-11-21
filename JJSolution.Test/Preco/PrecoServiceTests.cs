@@ -4,6 +4,7 @@ using AutoMapper;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System;
+using System.Linq;
 
 public class PrecoServiceTests
 {
@@ -22,16 +23,17 @@ public class PrecoServiceTests
     public async Task GetAllPrecosAsync_ReturnsMappedPrecoDtos()
     {
         // Arrange
+        var now = DateTime.Now;
         var precos = new List<Preco>
         {
-            new Preco { Id = 1, Data = DateTime.Now, PrecoKwh = 0.5m },
-            new Preco { Id = 2, Data = DateTime.Now.AddDays(-1), PrecoKwh = 0.6m }
+            new Preco { Id = 1, Data = now, PrecoKwh = 0.5m },
+            new Preco { Id = 2, Data = now.AddDays(-1), PrecoKwh = 0.6m }
         };
 
         var precosDto = new List<PrecoDto>
         {
-            new PrecoDto { Id = 1, Data = DateTime.Now, PrecoKwh = 0.5m },
-            new PrecoDto { Id = 2, Data = DateTime.Now.AddDays(-1), PrecoKwh = 0.6m }
+            new PrecoDto { Id = 1, Data = now, PrecoKwh = 0.5m },
+            new PrecoDto { Id = 2, Data = now.AddDays(-1), PrecoKwh = 0.6m }
         };
 
         _mockRepository.Setup(repo => repo.GetAllAsync()).ReturnsAsync(precos);
@@ -50,8 +52,9 @@ public class PrecoServiceTests
     public async Task GetPrecoByIdAsync_ReturnsMappedPrecoDto_WhenExists()
     {
         // Arrange
-        var preco = new Preco { Id = 1, Data = DateTime.Now, PrecoKwh = 0.5m };
-        var precoDto = new PrecoDto { Id = 1, Data = DateTime.Now, PrecoKwh = 0.5m };
+        var now = DateTime.Now;
+        var preco = new Preco { Id = 1, Data = now, PrecoKwh = 0.5m };
+        var precoDto = new PrecoDto { Id = 1, Data = now, PrecoKwh = 0.5m };
 
         _mockRepository.Setup(repo => repo.GetByIdAsync(1)).ReturnsAsync(preco);
         _mockMapper.Setup(mapper => mapper.Map<PrecoDto>(preco)).Returns(precoDto);
@@ -70,29 +73,31 @@ public class PrecoServiceTests
     {
         // Arrange
         var precoDto = new PrecoDto { Id = 0, Data = DateTime.Now, PrecoKwh = 0.5m };
-        var preco = new Preco { Id = 1, Data = DateTime.Now, PrecoKwh = 0.5m };
-        var newPreco = new Preco { Id = 1, Data = DateTime.Now, PrecoKwh = 0.5m };
+        var preco = new Preco { Id = 0, Data = precoDto.Data, PrecoKwh = precoDto.PrecoKwh };
+        var newPreco = new Preco { Id = 1, Data = preco.Data, PrecoKwh = preco.PrecoKwh };
+        var expectedDto = new PrecoDto { Id = 1, Data = newPreco.Data, PrecoKwh = newPreco.PrecoKwh };
 
         _mockMapper.Setup(mapper => mapper.Map<Preco>(precoDto)).Returns(preco);
         _mockRepository.Setup(repo => repo.AddAsync(preco)).ReturnsAsync(newPreco);
-        _mockMapper.Setup(mapper => mapper.Map<PrecoDto>(newPreco)).Returns(precoDto);
+        _mockMapper.Setup(mapper => mapper.Map<PrecoDto>(newPreco)).Returns(expectedDto);
 
         // Act
         var result = await _service.CreatePrecoAsync(precoDto);
 
         // Assert
         Assert.NotNull(result);
-        Assert.Equal(preco.Id, result.Id);
-        Assert.Equal(preco.PrecoKwh, result.PrecoKwh);
+        Assert.Equal(expectedDto.Id, result.Id);
+        Assert.Equal(expectedDto.PrecoKwh, result.PrecoKwh);
     }
 
     [Fact]
     public async Task UpdatePrecoAsync_ReturnsMappedPrecoDto_WhenExists()
     {
         // Arrange
-        var precoDto = new PrecoDto { Id = 1, Data = DateTime.Now, PrecoKwh = 0.6m };
-        var preco = new Preco { Id = 1, Data = DateTime.Now, PrecoKwh = 0.5m };
-        var updatedPreco = new Preco { Id = 1, Data = DateTime.Now, PrecoKwh = 0.6m };
+        var now = DateTime.Now;
+        var precoDto = new PrecoDto { Id = 1, Data = now, PrecoKwh = 0.6m };
+        var preco = new Preco { Id = 1, Data = now, PrecoKwh = 0.5m };
+        var updatedPreco = new Preco { Id = 1, Data = now, PrecoKwh = 0.6m };
 
         _mockMapper.Setup(mapper => mapper.Map<Preco>(precoDto)).Returns(preco);
         _mockRepository.Setup(repo => repo.UpdateAsync(preco)).ReturnsAsync(updatedPreco);

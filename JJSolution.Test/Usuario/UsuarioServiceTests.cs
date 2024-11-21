@@ -68,10 +68,13 @@ public class UsuarioServiceTests
         // Arrange
         var usuarioDto = new UsuarioDto { Nome = "João", Email = "joao@email.com", Senha = "123456" };
         var usuario = new Usuario { Id = 1, Nome = "João", Email = "joao@email.com", Senha = "123456" };
+        var createdUsuario = new Usuario { Id = 1, Nome = "João", Email = "joao@email.com", Senha = "123456" };
+        var expectedUsuarioDto = new UsuarioDto { Id = 1, Nome = "João", Email = "joao@email.com", Senha = "123456" };
 
         _mockMapper.Setup(mapper => mapper.Map<Usuario>(usuarioDto)).Returns(usuario);
-        _mockRepository.Setup(repo => repo.AddAsync(usuario)).ReturnsAsync(usuario);
-        _mockMapper.Setup(mapper => mapper.Map<UsuarioDto>(usuario)).Returns(usuarioDto);
+        _mockRepository.Setup(repo => repo.AddAsync(usuario)).ReturnsAsync(createdUsuario);
+        _mockMapper.Setup(mapper => mapper.Map<UsuarioDto>(createdUsuario)).Returns(expectedUsuarioDto);
+
 
         // Act
         var result = await _service.CreateUsuarioAsync(usuarioDto);
