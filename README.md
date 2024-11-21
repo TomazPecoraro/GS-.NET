@@ -1,4 +1,4 @@
-# **Sprint4-.NET**
+# **GS.NET**
 
 ## **Descrição da Arquitetura**
 O projeto é uma **API monolítica** desenvolvida com **ASP.NET Core Web API**, estruturada de forma modular para garantir organização e facilidade de manutenção.
