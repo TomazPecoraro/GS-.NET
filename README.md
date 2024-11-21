@@ -11,7 +11,6 @@ Gerenciam as requisições HTTP e direcionam as operações para os serviços co
 - **AparelhoController**: Gerencia as operações de cadastro e consulta de aparelhos.
 - **ConsumoController**: Lida com os dados de consumo energético.
 - **PrecoController**: Controla as operações relacionadas a preços.
-- **AnaliseController**: Processa análises e previsões.
 - **AlertaController**: Gerencia alertas e notificações.
 
 #### **Models**
@@ -28,7 +27,6 @@ Contém a lógica de negócios, implementando funcionalidades específicas de ca
 - **AparelhoService**
 - **ConsumoService**
 - **PrecoService**
-- **AnaliseService**
 - **AlertaService**
 
 #### **Repositories**
@@ -48,8 +46,8 @@ Testes automatizados utilizando **xUnit** e **Moq**.
 - **UsuarioServiceTests**
 - **AparelhoServiceTests**
 - **ConsumoServiceTests**
-- **AnaliseServiceTests**
 - **AlertaServiceTests**
+- **PrecoServiceTests**
 
 ---
 
