@@ -5,7 +5,7 @@ VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JJSolution.API", "JJSolution.API\JJSolution.API.csproj", "{2252E170-5CAC-4C7E-BC72-965A0E1B2B9C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JJSolution.Respository", "JJSolution.Respository\JJSolution.Respository.csproj", "{D08603A5-ADCB-4CCA-BA28-BCD3EB9CB817}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JJSolution.Repository", "JJSolution.Respository\JJSolution.Repository.csproj", "{D08603A5-ADCB-4CCA-BA28-BCD3EB9CB817}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JJSolution.Models", "JJSolution.Models\JJSolution.Models.csproj", "{522912AB-173E-4ABB-B50B-E047091FE681}"
 EndProject

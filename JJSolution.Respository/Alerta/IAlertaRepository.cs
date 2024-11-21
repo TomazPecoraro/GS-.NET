@@ -1,12 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace JJSolution.Respository.Alerta
+public interface IAlertaRepository
 {
-    internal interface IAlertaRepository
-    {
-    }
+    Task<Alerta> GetByIdAsync(int id); // Obter um alerta por ID
+    Task<IEnumerable<Alerta>> GetAllAsync(); // Obter todos os alertas
+    Task<IEnumerable<Alerta>> GetByUsuarioIdAsync(int usuarioId); // Obter alertas por ID do usuário
+    Task AddAsync(Alerta alerta); // Adicionar um novo alerta
+    Task UpdateAsync(Alerta alerta); // Atualizar um alerta existente
+    Task DeleteAsync(int id); // Deletar um alerta por ID
 }
