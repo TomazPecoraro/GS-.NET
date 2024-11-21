@@ -73,3 +73,11 @@ Testes automatizados utilizando **xUnit** e **Moq**.
    "ConnectionStrings": {
        "OracleFIAP": "Data Source=seu_host:1521/seu_serviço;User ID=seu_usuario;Password=sua_senha;"
    }
+
+### **Integrantes do Grupo**
+
+- Tomaz de Oliveira Pecoraro – RM98499
+- Rennan Ferreira da Cruz – RM99364
+- Jaisy Cibele Alves – RM552269
+- Luiz Felipe Camargo Prendin – RM552475
+- Gabriel Amâncio – RM97936
