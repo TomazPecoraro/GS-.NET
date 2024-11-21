@@ -134,6 +134,11 @@ O código segue os princípios de SOLID e boas práticas de organização e nome
 - Redução do acoplamento.
 - Escalabilidade do sistema.
 
+### **Modelo ML**
+
+#### Link Dataset
+https://www.kaggle.com/datasets/antoinelebrundu13/household-appliances-consumption
+
 ### **Integrantes do Grupo**
 
 - Tomaz de Oliveira Pecoraro – RM98499
