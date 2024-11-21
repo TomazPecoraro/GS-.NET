@@ -46,6 +46,18 @@ namespace JJSolution.DataBase
                 .HasIndex(u => u.Email)
                 .IsUnique();
 
+            modelBuilder.Entity<Consumo>()
+           .Property(c => c.CustoEstimado)
+           .HasPrecision(18, 2);
+
+            modelBuilder.Entity<Preco>()
+                .Property(p => p.PrecoKwh)
+                .HasPrecision(18, 2);
+
+            modelBuilder.Entity<Alerta>()
+       .        Property(a => a.Lido)
+                .HasColumnType("NUMBER(1)");
+
             base.OnModelCreating(modelBuilder);
         }
 
