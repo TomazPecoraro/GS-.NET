@@ -74,6 +74,59 @@ Testes automatizados utilizando **xUnit** e **Moq**.
        "OracleFIAP": "Data Source=seu_host:1521/seu_serviço;User ID=seu_usuario;Password=sua_senha;"
    }
 
+### Instalação
+
+1. **Clone o Repositório:**
+   - Clone o repositório para o seu ambiente local usando o seguinte comando:
+     ```bash
+     git clone https://github.com/TomazPecoraro/GS.NET.git
+     ```
+   - Navegue para o diretório do projeto:
+     ```bash
+     cd GS.NET
+     ```
+
+2. **Restaure as Dependências:**
+   - Execute o comando para restaurar as dependências do projeto:
+     ```bash
+     dotnet restore
+     ```
+
+### Execução
+
+1. **Rodar a API:**
+   - Use o seguinte comando para rodar a API localmente:
+     ```bash
+     dotnet run --project JJSolution.API/JJSolution.API.csproj
+     ```
+   - A API estará disponível em `https://localhost:5031` por padrão.
+
+2. **Acessar a Documentação da API:**
+   - A documentação Swagger pode ser acessada navegando para:
+     ```markdown
+     http://localhost:5031/swagger/index.html
+     ```
+
+### Testes
+
+1. **Executar Testes Automatizados:**
+   - Para rodar os testes automatizados, use o comando:
+     ```bash
+     dotnet test
+     ```
+
+### Exemplos de Uso
+
+- Testes de Integração das Entidades Anuncio, Campanha e Usuario
+- Teste da Camada Service de cada Classe
+- Utilização do Swagger para teste de todos os EndPoint e Operações CRUD
+
+#### Requisição GET de todas a entidades
+
+```bash
+http://localhost:5031/swagger/index.html
+```
+
 ### **Práticas de Clean Code**
 O código segue os princípios de SOLID e boas práticas de organização e nomeação, garantindo:
 
