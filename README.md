@@ -13,6 +13,8 @@ Gerenciam as requisições HTTP e direcionam as operações para os serviços co
 - **PrecoController**: Controla as operações relacionadas a preços.
 - **AlertaController**: Gerencia alertas e notificações.
 
+---
+
 ### **Models**
 Define as entidades e os DTOs utilizados pela aplicação.
 - **Usuario**: Representa os usuários do sistema.
@@ -20,6 +22,8 @@ Define as entidades e os DTOs utilizados pela aplicação.
 - **Consumo**: Contém informações de consumo energético.
 - **Preco**: Representa preços de energia e outras tarifas.
 - **Alerta**: Modela notificações e alertas gerados pelo sistema.
+
+---
 
 ### **Services**
 Contém a lógica de negócios, implementando funcionalidades específicas de cada domínio.
@@ -29,6 +33,8 @@ Contém a lógica de negócios, implementando funcionalidades específicas de ca
 - **PrecoService**
 - **AlertaService**
 
+---
+
 ### **Repositories**
 Implementam o padrão **Repository**, encapsulando o acesso ao banco de dados.
 - **UsuarioRepository**
@@ -37,9 +43,13 @@ Implementam o padrão **Repository**, encapsulando o acesso ao banco de dados.
 - **PrecoRepository**
 - **AlertaRepository**
 
+---
+
 ### **Config**
 Gerencia configurações do projeto.
 - **AppConfiguration**: Configuração do Swagger e banco de dddos para documentação da API.
+
+---
 
 ### **Tests**
 Testes automatizados utilizando **xUnit** e **Moq**.
@@ -48,6 +58,19 @@ Testes automatizados utilizando **xUnit** e **Moq**.
 - **ConsumoServiceTests**
 - **AlertaServiceTests**
 - **PrecoServiceTests**
+
+1. **Executar Testes Automatizados:**
+   - Para rodar os testes automatizados, use o comando:
+     ```bash
+     dotnet test
+     ```
+
+### Exemplos de Uso
+
+- Testes de Integração das Entidades Anuncio, Campanha e Usuario
+- Teste da Camada Service de cada Classe
+- Utilização do Swagger para teste de todos os EndPoint e Operações CRUD
+---
 
 ---
 
@@ -66,6 +89,8 @@ Testes automatizados utilizando **xUnit** e **Moq**.
 - [Oracle Database](https://www.oracle.com/database/)
 - [Postman](https://www.postman.com/downloads/) ou navegador para acessar o Swagger.
 
+---
+
 ### **Configuração do Banco de Dados**
 1. Configure o banco Oracle conforme as instruções fornecidas pela Oracle.
 2. Atualize a string de conexão no arquivo `appsettings.json`:
@@ -73,6 +98,8 @@ Testes automatizados utilizando **xUnit** e **Moq**.
    "ConnectionStrings": {
        "OracleFIAP": "Data Source=seu_host:1521/seu_serviço;User ID=seu_usuario;Password=sua_senha;"
    }
+
+---
 
 ### Instalação
 
@@ -91,6 +118,7 @@ Testes automatizados utilizando **xUnit** e **Moq**.
      ```bash
      dotnet restore
      ```
+---
 
 ### Execução
 
@@ -107,25 +135,13 @@ Testes automatizados utilizando **xUnit** e **Moq**.
      http://localhost:5031/swagger/index.html
      ```
 
-### Testes
-
-1. **Executar Testes Automatizados:**
-   - Para rodar os testes automatizados, use o comando:
-     ```bash
-     dotnet test
-     ```
-
-### Exemplos de Uso
-
-- Testes de Integração das Entidades Anuncio, Campanha e Usuario
-- Teste da Camada Service de cada Classe
-- Utilização do Swagger para teste de todos os EndPoint e Operações CRUD
-
 #### Requisição GET de todas a entidades
 
 ```bash
 http://localhost:5031/swagger/index.html
 ```
+
+---
 
 ### **Práticas de Clean Code**
 O código segue os princípios de SOLID e boas práticas de organização e nomeação, garantindo:
@@ -134,10 +150,14 @@ O código segue os princípios de SOLID e boas práticas de organização e nome
 - Redução do acoplamento.
 - Escalabilidade do sistema.
 
+---
+
 ### **Modelo ML**
 
 #### Link Dataset
 https://www.kaggle.com/datasets/antoinelebrundu13/household-appliances-consumption
+
+---
 
 ### **Integrantes do Grupo**
 
