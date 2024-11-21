@@ -74,6 +74,13 @@ Testes automatizados utilizando **xUnit** e **Moq**.
        "OracleFIAP": "Data Source=seu_host:1521/seu_serviço;User ID=seu_usuario;Password=sua_senha;"
    }
 
+### **Práticas de Clean Code**
+O código segue os princípios de SOLID e boas práticas de organização e nomeação, garantindo:
+
+- Manutenção simplificada.
+- Redução do acoplamento.
+- Escalabilidade do sistema.
+
 ### **Integrantes do Grupo**
 
 - Tomaz de Oliveira Pecoraro – RM98499
