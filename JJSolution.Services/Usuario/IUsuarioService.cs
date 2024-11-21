@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace JJSolution.Services.Usuario
+public interface IUsuarioService
 {
-    internal interface IUsuarioService
-    {
-    }
+    Task<UsuarioDto> GetByIdAsync(int id); // Obter um usuário por ID
+    Task<IEnumerable<UsuarioDto>> GetAllAsync(); // Obter todos os usuários
+    Task<UsuarioDto> GetByEmailAsync(string email); // Obter usuário por email
+    Task AddAsync(UsuarioDto usuarioDto); // Adicionar um novo usuário
+    Task UpdateAsync(UsuarioDto usuarioDto); // Atualizar um usuário existente
+    Task DeleteAsync(int id); // Deletar um usuário por ID
 }

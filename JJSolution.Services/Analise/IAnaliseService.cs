@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace JJSolution.Services.Analise
+public interface IAnaliseService
 {
-    internal interface IAnaliseService
-    {
-    }
+    Task<decimal> CalcularConsumoTotalAsync(int usuarioId);
+    Task<IEnumerable<RelatorioConsumoDto>> GerarRelatorioConsumoAsync(int usuarioId, DateTime periodoInicio, DateTime periodoFim);
+    Task<decimal> CalcularCustoEstimadoTotalAsync(int usuarioId);
 }

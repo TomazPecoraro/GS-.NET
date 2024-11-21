@@ -17,5 +17,10 @@
     <PackageReference Include="xunit" Version="2.9.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\JJSolution.Models\JJSolution.Models.csproj" />
+    <ProjectReference Include="..\JJSolution.Respository\JJSolution.Repository.csproj" />
+  </ItemGroup>
+
 </Project>
  

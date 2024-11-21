@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace JJSolution.Services.Preco
+public interface IPrecoService
 {
-    internal interface IPrecoService
-    {
-    }
+    Task<PrecoDto> GetPrecoByIdAsync(int id);
+    Task<IEnumerable<PrecoDto>> GetAllPrecosAsync();
+    Task CreatePrecoAsync(PrecoDto precoDto);
+    Task UpdatePrecoAsync(PrecoDto precoDto);
+    Task DeletePrecoAsync(int id);
 }

@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace JJSolution.Services.Aparelho
+public interface IAparelhoService
 {
-    internal interface IAparelhoService
-    {
-    }
+    Task<AparelhoDto> GetAparelhoByIdAsync(int id);
+    Task<IEnumerable<AparelhoDto>> GetAparelhosByUsuarioIdAsync(int usuarioId);
+    Task CreateAparelhoAsync(AparelhoDto aparelhoDto);
+    Task UpdateAparelhoAsync(AparelhoDto aparelhoDto);
+    Task DeleteAparelhoAsync(int id);
 }
