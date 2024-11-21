@@ -3,7 +3,7 @@
   "DataSource": {
     "Type": "TabularFile",
     "Version": 1,
-    "FilePath": "C:\\Users\\tomaz\\Downloads\\archive (1)\\Household_Appliances_Consumption.csv",
+    "FilePath": "C:\\Users\\tomaz\\source\\repos\\GS.NET\\JJSolution.ML\\Household_Appliances_Consumption.csv",
     "Delimiter": ";",
     "DecimalMarker": ",",
     "HasHeader": true,

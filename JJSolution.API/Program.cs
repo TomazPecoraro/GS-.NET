@@ -3,6 +3,7 @@ using Microsoft.OpenApi.Models;
 using JJSolution.DataBase;
 using Microsoft.ML;
 using System.IO;
+using JJSolution_ML;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -58,7 +59,7 @@ builder.Services.AddAutoMapper(typeof(MappingProfile));
 // Registro dos serviços
 builder.Services.AddScoped<IAlertaService, AlertaService>();
 builder.Services.AddScoped<IAparelhoService, AparelhoService>();
-builder.Services.AddScoped<IUsuarioService, UsuarioService>(); 
+builder.Services.AddScoped<IUsuarioService, UsuarioService>();
 builder.Services.AddScoped<IConsumoService, ConsumoService>();
 builder.Services.AddScoped<IPrecoService, PrecoService>();
 
@@ -68,6 +69,7 @@ builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IPrecoRepository, PrecoRepository>();
 builder.Services.AddScoped<IAparelhoRepository, AparelhoRepository>();
 
+// Configuração do modelo ML
 string modelPath = Path.Combine(Directory.GetCurrentDirectory(), "MLModel1.mlnet");
 var mlContext = new MLContext();
 ITransformer mlModel;
@@ -83,6 +85,8 @@ catch (Exception ex)
     Console.WriteLine($"Erro ao carregar o modelo: {ex.Message}");
     return;
 }
+
+var app = builder.Build();
 
 // Definindo a rota de predição
 app.MapPost("/predict", (MLModel1.ModelInput input) =>
@@ -111,8 +115,6 @@ builder.Services.AddAuthorization();
 // Configuração de logs
 builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
-
-var app = builder.Build();
 
 // Configura o pipeline de requisições HTTP
 if (app.Environment.IsDevelopment())
