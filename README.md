@@ -5,7 +5,7 @@ O projeto é uma **API monolítica** desenvolvida com **ASP.NET Core Web API**, 
 
 ### **Estrutura do Projeto**
 
-#### **Controllers**
+### **Controllers**
 Gerenciam as requisições HTTP e direcionam as operações para os serviços correspondentes.
 - **UsuarioController**: Gerencia as operações relacionadas a usuários.
 - **AparelhoController**: Gerencia as operações de cadastro e consulta de aparelhos.
@@ -13,7 +13,7 @@ Gerenciam as requisições HTTP e direcionam as operações para os serviços co
 - **PrecoController**: Controla as operações relacionadas a preços.
 - **AlertaController**: Gerencia alertas e notificações.
 
-#### **Models**
+### **Models**
 Define as entidades e os DTOs utilizados pela aplicação.
 - **Usuario**: Representa os usuários do sistema.
 - **Aparelho**: Modela os aparelhos cadastrados.
@@ -21,7 +21,7 @@ Define as entidades e os DTOs utilizados pela aplicação.
 - **Preco**: Representa preços de energia e outras tarifas.
 - **Alerta**: Modela notificações e alertas gerados pelo sistema.
 
-#### **Services**
+### **Services**
 Contém a lógica de negócios, implementando funcionalidades específicas de cada domínio.
 - **UsuarioService**
 - **AparelhoService**
@@ -29,7 +29,7 @@ Contém a lógica de negócios, implementando funcionalidades específicas de ca
 - **PrecoService**
 - **AlertaService**
 
-#### **Repositories**
+### **Repositories**
 Implementam o padrão **Repository**, encapsulando o acesso ao banco de dados.
 - **UsuarioRepository**
 - **AparelhoRepository**
@@ -37,11 +37,11 @@ Implementam o padrão **Repository**, encapsulando o acesso ao banco de dados.
 - **PrecoRepository**
 - **AlertaRepository**
 
-#### **Config**
+### **Config**
 Gerencia configurações do projeto.
 - **AppConfiguration**: Configuração do Swagger e banco de dddos para documentação da API.
 
-#### **Tests**
+### **Tests**
 Testes automatizados utilizando **xUnit** e **Moq**.
 - **UsuarioServiceTests**
 - **AparelhoServiceTests**
