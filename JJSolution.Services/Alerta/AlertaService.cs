@@ -32,7 +32,7 @@ public class AlertaService : IAlertaService
             return _mapper.Map<AlertaDto>(newAlerta);
         }
 
-        public async Task<AlertaDto> UpdateAlertaAsync(AlertaDto alertaDto)
+        public async Task<AlertaDto> UpdateAlertaAsync(int id, AlertaDto alertaDto)
         {
             var alerta = _mapper.Map<Alerta>(alertaDto);
             var updatedAlerta = await _alertaRepository.UpdateAsync(alerta);

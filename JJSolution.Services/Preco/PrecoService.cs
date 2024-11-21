@@ -32,7 +32,7 @@ using System.Threading.Tasks;
             return _mapper.Map<PrecoDto>(newPreco);
         }
 
-        public async Task<PrecoDto> UpdatePrecoAsync(PrecoDto precoDto)
+        public async Task<PrecoDto> UpdatePrecoAsync(int id,PrecoDto precoDto)
         {
             var preco = _mapper.Map<Preco>(precoDto);
             var updatedPreco = await _precoRepository.UpdateAsync(preco);

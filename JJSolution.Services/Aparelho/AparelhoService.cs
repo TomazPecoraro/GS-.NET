@@ -33,7 +33,7 @@ using System.Threading.Tasks;
             return _mapper.Map<AparelhoDto>(newAparelho);
         }
 
-        public async Task<AparelhoDto> UpdateAparelhoAsync(AparelhoDto aparelhoDto)
+        public async Task<AparelhoDto> UpdateAparelhoAsync(int id, AparelhoDto aparelhoDto)
         {
             var aparelho = _mapper.Map<Aparelho>(aparelhoDto);
             var updatedAparelho = await _aparelhoRepository.UpdateAsync(aparelho);

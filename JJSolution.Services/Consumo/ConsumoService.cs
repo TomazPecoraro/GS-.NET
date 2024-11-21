@@ -32,7 +32,7 @@ public class ConsumoService : IConsumoService
             return _mapper.Map<ConsumoDto>(newConsumo);
         }
 
-        public async Task<ConsumoDto> UpdateConsumoAsync(ConsumoDto consumoDto)
+        public async Task<ConsumoDto> UpdateConsumoAsync(int id, ConsumoDto consumoDto)
         {
             var consumo = _mapper.Map<Consumo>(consumoDto);
             var updatedConsumo = await _consumoRepository.UpdateAsync(consumo);

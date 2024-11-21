@@ -32,7 +32,7 @@ using System.Threading.Tasks;
             return _mapper.Map<UsuarioDto>(newUsuario);
         }
 
-        public async Task<UsuarioDto> UpdateUsuarioAsync(UsuarioDto usuarioDto)
+        public async Task<UsuarioDto> UpdateUsuarioAsync(int id, UsuarioDto usuarioDto)
         {
             var usuario = _mapper.Map<Usuario>(usuarioDto);
             var updatedUsuario = await _usuarioRepository.UpdateAsync(usuario);
