@@ -68,6 +68,42 @@ builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
 builder.Services.AddScoped<IPrecoRepository, PrecoRepository>();
 builder.Services.AddScoped<IAparelhoRepository, AparelhoRepository>();
 
+string modelPath = Path.Combine(Directory.GetCurrentDirectory(), "MLModel1.mlnet");
+var mlContext = new MLContext();
+ITransformer mlModel;
+
+// Carregando o modelo
+try
+{
+    mlModel = mlContext.Model.Load(modelPath, out var modelInputSchema);
+}
+catch (Exception ex)
+{
+    // Tratar exceção (por exemplo, logar erro)
+    Console.WriteLine($"Erro ao carregar o modelo: {ex.Message}");
+    return;
+}
+
+// Definindo a rota de predição
+app.MapPost("/predict", (MLModel1.ModelInput input) =>
+{
+    try
+    {
+        // Criação da entrada de dados para o modelo
+        var inputData = mlContext.Data.LoadFromEnumerable(new[] { input });
+
+        // Fazendo a predição
+        var predictions = mlModel.Transform(inputData);
+        var predictedResult = mlContext.Data.CreateEnumerable<MLModel1.ModelOutput>(predictions, reuseRowObject: false).FirstOrDefault();
+
+        return Results.Ok(predictedResult);
+    }
+    catch (Exception ex)
+    {
+        // Tratar exceção (por exemplo, retornar um erro para o cliente)
+        return Results.BadRequest($"Erro na predição: {ex.Message}");
+    }
+});
 
 // Adiciona serviços de autorização
 builder.Services.AddAuthorization();

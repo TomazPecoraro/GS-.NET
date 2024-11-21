@@ -31,6 +31,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\JJSolution.Database\JJSolution.Database.csproj" />
+    <ProjectReference Include="..\JJSolution.ML\JJSolution.ML.csproj" />
     <ProjectReference Include="..\JJSolution.Models\JJSolution.Models.csproj" />
     <ProjectReference Include="..\JJSolution.Respository\JJSolution.Repository.csproj" />
     <ProjectReference Include="..\JJSolution.Services\JJSolution.Services.csproj" />
