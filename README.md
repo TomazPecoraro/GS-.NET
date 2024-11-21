@@ -70,7 +70,6 @@ Testes automatizados utilizando **xUnit** e **Moq**.
 - Testes de Integração das Entidades Anuncio, Campanha e Usuario
 - Teste da Camada Service de cada Classe
 - Utilização do Swagger para teste de todos os EndPoint e Operações CRUD
----
 
 ---
 
@@ -82,16 +81,14 @@ Testes automatizados utilizando **xUnit** e **Moq**.
 
 ---
 
-## **Configuração e Execução da API**
+### **Configuração da API**
 
-### **Pré-requisitos**
+#### **Pré-requisitos**
 - [.NET 6 SDK](https://dotnet.microsoft.com/download)
 - [Oracle Database](https://www.oracle.com/database/)
 - [Postman](https://www.postman.com/downloads/) ou navegador para acessar o Swagger.
 
----
-
-### **Configuração do Banco de Dados**
+#### **Configuração do Banco de Dados**
 1. Configure o banco Oracle conforme as instruções fornecidas pela Oracle.
 2. Atualize a string de conexão no arquivo `appsettings.json`:
    ```json
