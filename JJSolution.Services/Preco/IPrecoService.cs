@@ -5,7 +5,7 @@ public interface IPrecoService
 {
     Task<PrecoDto> GetPrecoByIdAsync(int id);
     Task<IEnumerable<PrecoDto>> GetAllPrecosAsync();
-    Task CreatePrecoAsync(PrecoDto precoDto);
-    Task UpdatePrecoAsync(PrecoDto precoDto);
-    Task DeletePrecoAsync(int id);
+    Task<PrecoDto> CreatePrecoAsync(PrecoDto precoDto);
+    Task<PrecoDto> UpdatePrecoAsync(PrecoDto precoDto);
+    Task<bool> DeletePrecoAsync(int id);
 }

@@ -1,75 +1,51 @@
-﻿using System;
+﻿using AutoMapper;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
-public class UsuarioService : IUsuarioService
-{
-    private readonly IUsuarioRepository _usuarioRepository;
-
-    public UsuarioService(IUsuarioRepository usuarioRepository)
+    public class UsuarioService : IUsuarioService
     {
-        _usuarioRepository = usuarioRepository;
-    }
+        private readonly IUsuarioRepository _usuarioRepository;
+        private readonly IMapper _mapper;
 
-    public async Task<UsuarioDto> GetByIdAsync(int id)
-    {
-        var usuario = await _usuarioRepository.GetByIdAsync(id);
-        if (usuario == null)
-            return null;
-
-        return new UsuarioDto
+        public UsuarioService(IUsuarioRepository usuarioRepository, IMapper mapper)
         {
-            Id = usuario.Id,
-            Nome = usuario.Nome,
-            Email = usuario.Email
-        };
-    }
+            _usuarioRepository = usuarioRepository;
+            _mapper = mapper;
+        }
 
-    public async Task<IEnumerable<UsuarioDto>> GetAllAsync()
-    {
-        var usuarios = await _usuarioRepository.GetAllAsync();
-        return usuarios.Select(u => new UsuarioDto
+        public async Task<IEnumerable<UsuarioDto>> GetAllUsuariosAsync()
         {
-            Id = u.Id,
-            Nome = u.Nome,
-            Email = u.Email
-        }).ToList();
-    }
+            var usuarios = await _usuarioRepository.GetAllAsync();
+            return _mapper.Map<IEnumerable<UsuarioDto>>(usuarios);
+        }
 
-    public async Task<UsuarioDto> GetByEmailAsync(string email)
-    {
-        var usuario = await _usuarioRepository.GetByEmailAsync(email);
-        if (usuario == null)
-            return null;
-
-        return new UsuarioDto
+        public async Task<UsuarioDto> GetUsuarioByIdAsync(int id)
         {
-            Id = usuario.Id,
-            Nome = usuario.Nome,
-            Email = usuario.Email
-        };
-    }
+            var usuario = await _usuarioRepository.GetByIdAsync(id);
+            return _mapper.Map<UsuarioDto>(usuario);
+        }
 
-    public async Task AddAsync(UsuarioDto usuarioDto)
-    {
-        if (usuarioDto == null)
-            throw new ArgumentNullException(nameof(usuarioDto));
-
-        var usuario = new Usuario
+        public async Task<UsuarioDto> CreateUsuarioAsync(UsuarioDto usuarioDto)
         {
-            Nome = usuarioDto.Nome,
-            Email = usuarioDto.Email,
-            Senha = "senha_gerada" // Lógica de senha (pode ser criada ou passada como parâmetro)
-        };
+            var usuario = _mapper.Map<Usuario>(usuarioDto);
+            var newUsuario = await _usuarioRepository.AddAsync(usuario);
+            return _mapper.Map<UsuarioDto>(newUsuario);
+        }
 
-        // Adicione validações ou outras lógicas de negócios, se necessário
-        await _usuarioRepository.AddAsync(usuario);
+        public async Task<UsuarioDto> UpdateUsuarioAsync(UsuarioDto usuarioDto)
+        {
+            var usuario = _mapper.Map<Usuario>(usuarioDto);
+            var updatedUsuario = await _usuarioRepository.UpdateAsync(usuario);
+            return _mapper.Map<UsuarioDto>(updatedUsuario);
+        }
+
+        public async Task<bool> DeleteUsuarioAsync(int id)
+        {
+            var usuario = await _usuarioRepository.GetByIdAsync(id);
+            if (usuario == null)
+                return false;
+
+            await _usuarioRepository.DeleteAsync(id);
+            return true;
+        }
     }
-
-    public async Task UpdateAsync(UsuarioDto usuarioDto)
-    {
-        if (usuarioDto == null)
-            throw new ArgumentNullException(nameof(usuarioDto));
-
-        var usuario = await _usuarioRepository.GetByIdAsync(usuarioD

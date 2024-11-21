@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\JJSolution.Models\JJSolution.Models.csproj" />
+	<ProjectReference Include="..\JJSolution.Database\JJSolution.Database.csproj" />
   </ItemGroup>
 
 </Project>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using JJSolution.DataBase;
 
 public class AlertaRepository : IAlertaRepository
 {
@@ -34,16 +35,18 @@ public class AlertaRepository : IAlertaRepository
             .ToListAsync();
     }
 
-    public async Task AddAsync(Alerta alerta)
+    public async Task<Alerta> AddAsync(Alerta alerta)
     {
         await _context.Alertas.AddAsync(alerta);
         await _context.SaveChangesAsync();
+        return alerta;
     }
 
-    public async Task UpdateAsync(Alerta alerta)
+    public async Task<Alerta> UpdateAsync(Alerta alerta)
     {
         _context.Alertas.Update(alerta);
         await _context.SaveChangesAsync();
+        return alerta;
     }
 
     public async Task DeleteAsync(int id)

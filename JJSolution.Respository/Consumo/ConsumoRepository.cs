@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using JJSolution.DataBase;
 
 public class ConsumoRepository : IConsumoRepository
 {
-    private readonly AppDbContext _context;
+    private readonly OracleDbContext _context;
 
-    public ConsumoRepository(AppDbContext context)
+    public ConsumoRepository(OracleDbContext context)
     {
         _context = context;
     }
@@ -46,16 +47,18 @@ public class ConsumoRepository : IConsumoRepository
             .ToListAsync();
     }
 
-    public async Task AddAsync(Consumo consumo)
+    public async Task<Consumo> AddAsync(Consumo consumo)
     {
         await _context.Consumos.AddAsync(consumo);
         await _context.SaveChangesAsync();
+        return consumo;
     }
 
-    public async Task UpdateAsync(Consumo consumo)
+    public async Task<Consumo> UpdateAsync(Consumo consumo)
     {
         _context.Consumos.Update(consumo);
         await _context.SaveChangesAsync();
+        return consumo;
     }
 
     public async Task DeleteAsync(int id)

@@ -3,9 +3,9 @@ using System.Threading.Tasks;
 
 public interface IAparelhoService
 {
+    Task<IEnumerable<AparelhoDto>> GetAllAparelhosAsync();
     Task<AparelhoDto> GetAparelhoByIdAsync(int id);
-    Task<IEnumerable<AparelhoDto>> GetAparelhosByUsuarioIdAsync(int usuarioId);
-    Task CreateAparelhoAsync(AparelhoDto aparelhoDto);
-    Task UpdateAparelhoAsync(AparelhoDto aparelhoDto);
-    Task DeleteAparelhoAsync(int id);
+    Task<AparelhoDto> CreateAparelhoAsync(AparelhoDto aparelhoDto);
+    Task<AparelhoDto> UpdateAparelhoAsync(AparelhoDto aparelhoDto);
+    Task<bool> DeleteAparelhoAsync(int id);
 }

@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using JJSolution.DataBase;
 
 public class AparelhoRepository : IAparelhoRepository
 {
-    private readonly AppDbContext _context;
+    private readonly OracleDbContext _context;
 
-    public AparelhoRepository(AppDbContext context)
+    public AparelhoRepository(OracleDbContext context)
     {
         _context = context;
     }
@@ -37,16 +38,18 @@ public class AparelhoRepository : IAparelhoRepository
             .ToListAsync();
     }
 
-    public async Task AddAsync(Aparelho aparelho)
+    public async Task<Aparelho> AddAsync(Aparelho aparelho)
     {
         await _context.Aparelhos.AddAsync(aparelho);
         await _context.SaveChangesAsync();
+        return aparelho;
     }
 
-    public async Task UpdateAsync(Aparelho aparelho)
+    public async Task<Aparelho> UpdateAsync(Aparelho aparelho)
     {
         _context.Aparelhos.Update(aparelho);
         await _context.SaveChangesAsync();
+        return aparelho;
     }
 
     public async Task DeleteAsync(int id)

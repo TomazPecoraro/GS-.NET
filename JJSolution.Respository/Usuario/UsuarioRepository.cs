@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using JJSolution.DataBase;
 
 public class UsuarioRepository : IUsuarioRepository
 {
-    private readonly AppDbContext _context;
+    private readonly OracleDbContext _context;
 
-    public UsuarioRepository(AppDbContext context)
+    public UsuarioRepository(OracleDbContext context)
     {
         _context = context;
     }
@@ -37,16 +38,18 @@ public class UsuarioRepository : IUsuarioRepository
             .FirstOrDefaultAsync(u => u.Email == email);
     }
 
-    public async Task AddAsync(Usuario usuario)
+    public async Task<Usuario> AddAsync(Usuario usuario)
     {
         await _context.Usuarios.AddAsync(usuario);
         await _context.SaveChangesAsync();
+        return usuario;
     }
 
-    public async Task UpdateAsync(Usuario usuario)
+    public async Task<Usuario> UpdateAsync(Usuario usuario)
     {
         _context.Usuarios.Update(usuario);
         await _context.SaveChangesAsync();
+        return usuario;
     }
 
     public async Task DeleteAsync(int id)

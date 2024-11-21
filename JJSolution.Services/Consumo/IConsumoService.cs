@@ -3,13 +3,10 @@ using System.Threading.Tasks;
 
 public interface IConsumoService
 {
+    Task<IEnumerable<ConsumoDto>> GetAllConsumosAsync();
     Task<ConsumoDto> GetConsumoByIdAsync(int id);
-    Task<IEnumerable<ConsumoDto>> GetConsumosByAparelhoIdAsync(int aparelhoId);
-    Task<IEnumerable<ConsumoDto>> GetConsumosByPrecoIdAsync(int precoId);
-    Task<IEnumerable<Consumo>> GetConsumosByUsuarioIdAsync(int usuarioId);
-    Task CreateConsumoAsync(ConsumoDto consumoDto);
-    Task UpdateConsumoAsync(ConsumoDto consumoDto);
-    Task DeleteConsumoAsync(int id);
+    Task<ConsumoDto> CreateConsumoAsync(ConsumoDto consumoDto);
+    Task<ConsumoDto> UpdateConsumoAsync(ConsumoDto consumoDto);
+    Task<bool> DeleteConsumoAsync(int id);
 }
 
-}

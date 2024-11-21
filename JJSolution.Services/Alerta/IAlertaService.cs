@@ -1,11 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-
 public interface IAlertaService
 {
-    Task<AlertaDTO> GetAlertaByIdAsync(int id);
-    Task<IEnumerable<AlertaDTO>> GetAlertasByUsuarioIdAsync(int usuarioId);
-    Task CreateAlertaAsync(AlertaDTO alertaDTO);
-    Task UpdateAlertaAsync(AlertaDTO alertaDTO);
-    Task DeleteAlertaAsync(int id);
+    Task<IEnumerable<AlertaDto>> GetAllAlertasAsync();
+    Task<AlertaDto> GetAlertaByIdAsync(int id);
+    Task<AlertaDto> CreateAlertaAsync(AlertaDto alertaDTO);
+    Task<AlertaDto> UpdateAlertaAsync(AlertaDto alertaDTO);
+    Task<bool> DeleteAlertaAsync(int id);
 }
