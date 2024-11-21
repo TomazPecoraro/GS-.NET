@@ -12,7 +12,11 @@ public class UsuarioController : ControllerBase
         _usuarioService = usuarioService;
     }
 
-    // GET: api/Usuario
+    /// <summary>
+    /// Obtém todos os usuários.
+    /// </summary>
+    /// <returns>Lista de usuários.</returns>
+    /// <response code="200">Retorna a lista de usuários com sucesso.</response>
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
@@ -20,7 +24,13 @@ public class UsuarioController : ControllerBase
         return Ok(usuarios);
     }
 
-    // GET: api/Usuario/{id}
+    /// <summary>
+    /// Obtém um usuário pelo ID.
+    /// </summary>
+    /// <param name="id">ID do usuário.</param>
+    /// <returns>Detalhes do usuário.</returns>
+    /// <response code="200">Retorna o usuário com sucesso.</response>
+    /// <response code="404">Usuário não encontrado para o ID fornecido.</response>
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
@@ -32,7 +42,13 @@ public class UsuarioController : ControllerBase
         return Ok(usuario);
     }
 
-    // POST: api/Usuario
+    /// <summary>
+    /// Cria um novo usuário.
+    /// </summary>
+    /// <param name="usuarioDto">Dados do usuário a ser criado.</param>
+    /// <returns>Usuário criado com sucesso.</returns>
+    /// <response code="201">Usuário criado com sucesso.</response>
+    /// <response code="400">Dados inválidos fornecidos.</response>
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] UsuarioDto usuarioDto)
     {
@@ -40,7 +56,15 @@ public class UsuarioController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = usuario.Id }, usuario);
     }
 
-    // PUT: api/Usuario/{id}
+    /// <summary>
+    /// Atualiza um usuário existente.
+    /// </summary>
+    /// <param name="id">ID do usuário a ser atualizado.</param>
+    /// <param name="usuarioDto">Dados atualizados do usuário.</param>
+    /// <returns>Resposta HTTP 204 (No Content) em caso de sucesso.</returns>
+    /// <response code="204">Usuário atualizado com sucesso.</response>
+    /// <response code="404">Usuário não encontrado para o ID fornecido.</response>
+    /// <response code="400">Dados inválidos fornecidos.</response>
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, [FromBody] UsuarioDto usuarioDto)
     {
@@ -52,7 +76,13 @@ public class UsuarioController : ControllerBase
         return NoContent();
     }
 
-    // DELETE: api/Usuario/{id}
+    /// <summary>
+    /// Deleta um usuário pelo ID.
+    /// </summary>
+    /// <param name="id">ID do usuário a ser deletado.</param>
+    /// <returns>Resposta HTTP 204 (No Content) em caso de sucesso.</returns>
+    /// <response code="204">Usuário deletado com sucesso.</response>
+    /// <response code="404">Usuário não encontrado para o ID fornecido.</response>
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {

@@ -12,7 +12,11 @@ public class AlertaController : ControllerBase
         _alertaService = alertaService;
     }
 
-    // GET: api/Alerta
+    /// <summary>
+    /// Obtém todos os alertas.
+    /// </summary>
+    /// <returns>Lista de alertas</returns>
+    /// <response code="200">Retorna a lista de alertas</response>
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
@@ -20,7 +24,13 @@ public class AlertaController : ControllerBase
         return Ok(alertas);
     }
 
-    // GET: api/Alerta/{id}
+    /// <summary>
+    /// Obtém um alerta pelo ID.
+    /// </summary>
+    /// <param name="id">ID do alerta</param>
+    /// <returns>Detalhes do alerta</returns>
+    /// <response code="200">Retorna os detalhes do alerta</response>
+    /// <response code="404">Alerta não encontrado</response>
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
@@ -32,7 +42,13 @@ public class AlertaController : ControllerBase
         return Ok(alerta);
     }
 
-    // POST: api/Alerta
+    /// <summary>
+    /// Cria um novo alerta.
+    /// </summary>
+    /// <param name="alertaDto">Dados do alerta a ser criado</param>
+    /// <returns>Alerta criado</returns>
+    /// <response code="201">Alerta criado com sucesso</response>
+    /// <response code="400">Dados inválidos fornecidos</response>
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] AlertaDto alertaDto)
     {
@@ -40,7 +56,14 @@ public class AlertaController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = alerta.Id }, alerta);
     }
 
-    // PUT: api/Alerta/{id}
+    /// <summary>
+    /// Atualiza um alerta existente.
+    /// </summary>
+    /// <param name="id">ID do alerta a ser atualizado</param>
+    /// <param name="alertaDto">Dados atualizados do alerta</param>
+    /// <returns>Resposta HTTP 204 (No Content)</returns>
+    /// <response code="204">Alerta atualizado com sucesso</response>
+    /// <response code="404">Alerta não encontrado</response>
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, [FromBody] AlertaDto alertaDto)
     {
@@ -52,7 +75,13 @@ public class AlertaController : ControllerBase
         return NoContent();
     }
 
-    // DELETE: api/Alerta/{id}
+    /// <summary>
+    /// Deleta um alerta pelo ID.
+    /// </summary>
+    /// <param name="id">ID do alerta a ser deletado</param>
+    /// <returns>Resposta HTTP 204 (No Content)</returns>
+    /// <response code="204">Alerta deletado com sucesso</response>
+    /// <response code="404">Alerta não encontrado</response>
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {

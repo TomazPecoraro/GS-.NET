@@ -4,7 +4,5 @@
     public string Nome { get; set; } // Nome do usuário
     public string Email { get; set; } // Email do usuário
     public string Senha { get; set; } // Senha do usuário
-    public ICollection<int> AparelhosIds { get; set; } // IDs dos aparelhos relacionados
-    public ICollection<int> AlertasIds { get; set; } // IDs dos alertas relacionados
 }
 

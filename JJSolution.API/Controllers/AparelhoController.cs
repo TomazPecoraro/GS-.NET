@@ -12,7 +12,11 @@ public class AparelhoController : ControllerBase
         _aparelhoService = aparelhoService;
     }
 
-    // GET: api/Aparelho
+    /// <summary>
+    /// Obtém todos os aparelhos.
+    /// </summary>
+    /// <returns>Lista de aparelhos.</returns>
+    /// <response code="200">Retorna a lista de aparelhos com sucesso.</response>
     [HttpGet]
     public async Task<IActionResult> GetAll()
     {
@@ -20,7 +24,13 @@ public class AparelhoController : ControllerBase
         return Ok(aparelhos);
     }
 
-    // GET: api/Aparelho/{id}
+    /// <summary>
+    /// Obtém um aparelho pelo ID.
+    /// </summary>
+    /// <param name="id">ID do aparelho.</param>
+    /// <returns>Detalhes do aparelho.</returns>
+    /// <response code="200">Retorna o aparelho com sucesso.</response>
+    /// <response code="404">Aparelho não encontrado para o ID fornecido.</response>
     [HttpGet("{id}")]
     public async Task<IActionResult> GetById(int id)
     {
@@ -32,7 +42,13 @@ public class AparelhoController : ControllerBase
         return Ok(aparelho);
     }
 
-    // POST: api/Aparelho
+    /// <summary>
+    /// Cria um novo aparelho.
+    /// </summary>
+    /// <param name="aparelhoDto">Dados do aparelho a ser criado.</param>
+    /// <returns>Alerta criado com sucesso.</returns>
+    /// <response code="201">Aparelho criado com sucesso.</response>
+    /// <response code="400">Dados inválidos fornecidos.</response>
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] AparelhoDto aparelhoDto)
     {
@@ -40,7 +56,15 @@ public class AparelhoController : ControllerBase
         return CreatedAtAction(nameof(GetById), new { id = aparelho.Id }, aparelho);
     }
 
-    // PUT: api/Aparelho/{id}
+    /// <summary>
+    /// Atualiza um aparelho existente.
+    /// </summary>
+    /// <param name="id">ID do aparelho a ser atualizado.</param>
+    /// <param name="aparelhoDto">Dados atualizados do aparelho.</param>
+    /// <returns>Resposta HTTP 204 (No Content) em caso de sucesso.</returns>
+    /// <response code="204">Aparelho atualizado com sucesso.</response>
+    /// <response code="404">Aparelho não encontrado para o ID fornecido.</response>
+    /// <response code="400">Dados inválidos fornecidos.</response>
     [HttpPut("{id}")]
     public async Task<IActionResult> Update(int id, [FromBody] AparelhoDto aparelhoDto)
     {
@@ -52,7 +76,13 @@ public class AparelhoController : ControllerBase
         return NoContent();
     }
 
-    // DELETE: api/Aparelho/{id}
+    /// <summary>
+    /// Deleta um aparelho pelo ID.
+    /// </summary>
+    /// <param name="id">ID do aparelho a ser deletado.</param>
+    /// <returns>Resposta HTTP 204 (No Content) em caso de sucesso.</returns>
+    /// <response code="204">Aparelho deletado com sucesso.</response>
+    /// <response code="404">Aparelho não encontrado para o ID fornecido.</response>
     [HttpDelete("{id}")]
     public async Task<IActionResult> Delete(int id)
     {
