@@ -54,10 +54,6 @@ namespace JJSolution.DataBase
                 .Property(p => p.PrecoKwh)
                 .HasPrecision(18, 2);
 
-            modelBuilder.Entity<Alerta>()
-       .        Property(a => a.Lido)
-                .HasColumnType("NUMBER(1)");
-
             base.OnModelCreating(modelBuilder);
         }
 
