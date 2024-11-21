@@ -13,9 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JJSolution.Database", "JJSo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JJSolution.Services", "JJSolution.Services\JJSolution.Services.csproj", "{1D1A57F8-E535-499F-AC5D-08F4D21BB9B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJSolution.ML", "JJSolution.API\JJSolution.ML\JJSolution.ML.csproj", "{CBF55018-C812-49B5-98F9-4E6EC29AC44E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JJSolution.ML", "JJSolution.API\JJSolution.ML\JJSolution.ML.csproj", "{CBF55018-C812-49B5-98F9-4E6EC29AC44E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JJSolution.Test", "JJSolution.Test\JJSolution.Test.csproj", "{EBB0601E-3FA6-4F7D-B39F-7B01EAB2368F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JJSolution.Test", "JJSolution.Test\JJSolution.Test.csproj", "{EBB0601E-3FA6-4F7D-B39F-7B01EAB2368F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
