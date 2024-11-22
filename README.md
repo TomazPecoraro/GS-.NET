@@ -151,8 +151,26 @@ O código segue os princípios de SOLID e boas práticas de organização e nome
 
 ### **Modelo ML**
 
+Fizemos um modelo de previsão de dados que retorna o quanto é gasto de energia de acordo com o dispositivo, segue abaixo o link do Dataset.
+
+#### 1. Previsão de Gasto de Energia
+- **Objetivo** : Estimar o número de Energia gasto de uma dispositivo com base em dados anteriores.
+- **Como Funciona**: O modelo usa dados históricos para prever a energia gasta.
+
+#### 2. Simplicidade e Integração
+
+- **Objetivo**: Permitir o uso fácil das previsões de impressões diretamente na API.
+- **Como Funciona**: A API disponibiliza um endpoint onde o usuário pode enviar os dados da campanha e receber a previsão de impressões, sem complexidades adicionais.
+  ```markdown
+     http://localhost:5025/swagger/predict
+     ```
+
+---
+
 #### Link Dataset
 https://www.kaggle.com/datasets/antoinelebrundu13/household-appliances-consumption
+
+Podemos asse
 
 ---
 
