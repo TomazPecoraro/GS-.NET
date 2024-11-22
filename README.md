@@ -154,7 +154,7 @@ O código segue os princípios de SOLID e boas práticas de organização e nome
 Fizemos um modelo de previsão de dados que retorna o quanto é gasto de energia de acordo com o dispositivo, segue abaixo o link do Dataset.
 
 #### 1. Previsão de Gasto de Energia
-- **Objetivo** : Estimar o número de Energia gasto de uma dispositivo com base em dados anteriores.
+- **Objetivo** : Estimar o quantidade de energia gasta de um dispositivo com base em dados anteriores.
 - **Como Funciona**: O modelo usa dados históricos para prever a energia gasta.
 
 #### 2. Simplicidade e Integração
@@ -165,12 +165,8 @@ Fizemos um modelo de previsão de dados que retorna o quanto é gasto de energia
      http://localhost:5025/swagger/predict
      ```
 
----
-
 #### Link Dataset
 https://www.kaggle.com/datasets/antoinelebrundu13/household-appliances-consumption
-
-Podemos asse
 
 ---
 
