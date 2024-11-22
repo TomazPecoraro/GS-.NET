@@ -70,7 +70,8 @@ builder.Services.AddScoped<IPrecoRepository, PrecoRepository>();
 builder.Services.AddScoped<IAparelhoRepository, AparelhoRepository>();
 
 // Configuração do modelo ML
-string modelPath = Path.Combine(Directory.GetCurrentDirectory(), "MLModel1.mlnet");
+string modelPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"..", "..", "..","..","JJSolution.ML", "MLModel1.mlnet");
+
 var mlContext = new MLContext();
 ITransformer mlModel;
 
@@ -85,6 +86,13 @@ catch (Exception ex)
     Console.WriteLine($"Erro ao carregar o modelo: {ex.Message}");
     return;
 }
+
+// Adiciona serviços de autorização
+builder.Services.AddAuthorization();
+
+// Configuração de logs
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
 
 var app = builder.Build();
 
@@ -109,13 +117,6 @@ app.MapPost("/predict", (MLModel1.ModelInput input) =>
     }
 });
 
-// Adiciona serviços de autorização
-builder.Services.AddAuthorization();
-
-// Configuração de logs
-builder.Logging.ClearProviders();
-builder.Logging.AddConsole();
-
 // Configura o pipeline de requisições HTTP
 if (app.Environment.IsDevelopment())
 {
@@ -131,6 +132,7 @@ else
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
+
 
 app.UseHttpsRedirection();
 app.UseCors("AllowAllOrigins");

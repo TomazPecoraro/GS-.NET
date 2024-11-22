@@ -11,9 +11,10 @@ namespace JJSolution_ML
 {
     public partial class MLModel1
     {
-        public const string RetrainFilePath =  @"C:\Users\tomaz\Downloads\archive (1)\Household_Appliances_Consumption.csv";
+        public const string RetrainFilePath =  @"C:\Users\tomaz\source\repos\GS.NET\JJSolution.ML\Household_Appliances_Consumption.csv";
         public const char RetrainSeparatorChar = ';';
         public const bool RetrainHasHeader =  true;
+        public const bool RetrainAllowQuoting =  false;
 
          /// <summary>
         /// Train a new model with the provided dataset.
@@ -22,11 +23,11 @@ namespace JJSolution_ML
         /// <param name="inputDataFilePath">Path to the data file for training.</param>
         /// <param name="separatorChar">Separator character for delimited training file.</param>
         /// <param name="hasHeader">Boolean if training file has a header.</param>
-        public static void Train(string outputModelPath, string inputDataFilePath = RetrainFilePath, char separatorChar = RetrainSeparatorChar, bool hasHeader = RetrainHasHeader)
+        public static void Train(string outputModelPath, string inputDataFilePath = RetrainFilePath, char separatorChar = RetrainSeparatorChar, bool hasHeader = RetrainHasHeader, bool allowQuoting = RetrainAllowQuoting)
         {
             var mlContext = new MLContext();
 
-            var data = LoadIDataViewFromFile(mlContext, inputDataFilePath, separatorChar, hasHeader);
+            var data = LoadIDataViewFromFile(mlContext, inputDataFilePath, separatorChar, hasHeader, allowQuoting);
             var model = RetrainModel(mlContext, data);
             SaveModel(mlContext, model, data, outputModelPath);
         }
@@ -39,11 +40,10 @@ namespace JJSolution_ML
         /// <param name="separatorChar">Separator character for delimited training file.</param>
         /// <param name="hasHeader">Boolean if training file has a header.</param>
         /// <returns>IDataView with loaded training data.</returns>
-        public static IDataView LoadIDataViewFromFile(MLContext mlContext, string inputDataFilePath, char separatorChar, bool hasHeader)
+        public static IDataView LoadIDataViewFromFile(MLContext mlContext, string inputDataFilePath, char separatorChar, bool hasHeader, bool allowQuoting)
         {
-            return mlContext.Data.LoadFromTextFile<ModelInput>(inputDataFilePath, separatorChar, hasHeader);
+            return mlContext.Data.LoadFromTextFile<ModelInput>(inputDataFilePath, separatorChar, hasHeader, allowQuoting: allowQuoting);
         }
-
 
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace JJSolution_ML
 
 
         /// <summary>
-        /// Retrains model using the pipeline generated as part of the training process.
+        /// Retrain model using the pipeline generated as part of the training process.
         /// </summary>
         /// <param name="mlContext"></param>
         /// <param name="trainData"></param>
@@ -79,7 +79,6 @@ namespace JJSolution_ML
             return model;
         }
 
-
         /// <summary>
         /// build the pipeline that is used from model builder. Use this function to retrain model.
         /// </summary>
@@ -88,7 +87,7 @@ namespace JJSolution_ML
         public static IEstimator<ITransformer> BuildPipeline(MLContext mlContext)
         {
             // Data process configuration with pipeline data transformations
-            var pipeline = mlContext.Forecasting.ForecastBySsa(windowSize:9,seriesLength:50,trainSize:2263,horizon:10,outputColumnName:@"Yearly consumption Y1",inputColumnName:@"Yearly consumption Y1",confidenceLowerBoundColumn:@"Yearly consumption Y1_LB",confidenceUpperBoundColumn:@"Yearly consumption Y1_UB");
+            var pipeline = mlContext.Forecasting.ForecastBySsa(windowSize:9,seriesLength:62,trainSize:2263,horizon:10,outputColumnName:@"Yearly consumption Y1",inputColumnName:@"Yearly consumption Y1",confidenceLowerBoundColumn:@"Yearly consumption Y1_LB",confidenceUpperBoundColumn:@"Yearly consumption Y1_UB");
 
             return pipeline;
         }

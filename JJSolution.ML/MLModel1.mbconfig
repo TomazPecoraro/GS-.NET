@@ -1,9 +1,14 @@
 ﻿{
   "Scenario": "Forecasting",
   "DataSource": {
+    "Version": 3,
+    "EscapeCharacter": "\"",
+    "ReadMultiLines": false,
+    "KeepDiacritics": false,
+    "KeepPunctuations": false,
+    "AllowQuoting": false,
     "Type": "TabularFile",
-    "Version": 1,
-    "FilePath": "C:\\Users\\tomaz\\Downloads\\archive (1)\\Household_Appliances_Consumption.csv",
+    "FilePath": "C:\\Users\\tomaz\\source\\repos\\GS.NET\\JJSolution.ML\\Household_Appliances_Consumption.csv",
     "Delimiter": ";",
     "DecimalMarker": ",",
     "HasHeader": true,
@@ -14,7 +19,7 @@
         "ColumnDataFormat": "String",
         "IsCategorical": true,
         "Type": "Column",
-        "Version": 4
+        "Version": 5
       },
       {
         "ColumnName": "ID appartment",
@@ -22,7 +27,7 @@
         "ColumnDataFormat": "Single",
         "IsCategorical": false,
         "Type": "Column",
-        "Version": 4
+        "Version": 5
       },
       {
         "ColumnName": "Yearly consumption Y1",
@@ -30,7 +35,7 @@
         "ColumnDataFormat": "Single",
         "IsCategorical": false,
         "Type": "Column",
-        "Version": 4
+        "Version": 5
       },
       {
         "ColumnName": "Yearly consumption Y2",
@@ -38,7 +43,7 @@
         "ColumnDataFormat": "Single",
         "IsCategorical": false,
         "Type": "Column",
-        "Version": 4
+        "Version": 5
       },
       {
         "ColumnName": "Type of device",
@@ -46,7 +51,7 @@
         "ColumnDataFormat": "String",
         "IsCategorical": false,
         "Type": "Column",
-        "Version": 4
+        "Version": 5
       }
     ]
   },
@@ -62,13 +67,13 @@
         "Version": 1,
         "Type": "Trial",
         "TrainerName": "ForecastBySsa",
-        "Score": 471.12456032535385,
-        "RuntimeInSeconds": 0.025,
+        "Score": 470.86856338209452,
+        "RuntimeInSeconds": 0.019,
         "Parameter": {
           "_SCHEMA_": "e0",
           "e0": {
             "WindowSize": 9,
-            "SeriesLength": 50,
+            "SeriesLength": 62,
             "TrainSize": 2263,
             "Horizon": 10,
             "OutputColumnName": "Yearly consumption Y1",
@@ -82,13 +87,13 @@
         "Version": 1,
         "Type": "Trial",
         "TrainerName": "ForecastBySsa",
-        "Score": 471.12456032535385,
-        "RuntimeInSeconds": 0.031,
+        "Score": 470.86856338209452,
+        "RuntimeInSeconds": 0.017,
         "Parameter": {
           "_SCHEMA_": "e0",
           "e0": {
             "WindowSize": 9,
-            "SeriesLength": 74,
+            "SeriesLength": 87,
             "TrainSize": 2263,
             "Horizon": 10,
             "OutputColumnName": "Yearly consumption Y1",
@@ -102,13 +107,13 @@
         "Version": 1,
         "Type": "Trial",
         "TrainerName": "ForecastBySsa",
-        "Score": 479.15978774599222,
-        "RuntimeInSeconds": 0.024,
+        "Score": 470.86856338209452,
+        "RuntimeInSeconds": 0.015,
         "Parameter": {
           "_SCHEMA_": "e0",
           "e0": {
-            "WindowSize": 12,
-            "SeriesLength": 46,
+            "WindowSize": 9,
+            "SeriesLength": 18,
             "TrainSize": 2263,
             "Horizon": 10,
             "OutputColumnName": "Yearly consumption Y1",
@@ -122,13 +127,13 @@
         "Version": 1,
         "Type": "Trial",
         "TrainerName": "ForecastBySsa",
-        "Score": 479.15978774599222,
-        "RuntimeInSeconds": 0.027,
+        "Score": 470.86856338209452,
+        "RuntimeInSeconds": 0.015,
         "Parameter": {
           "_SCHEMA_": "e0",
           "e0": {
-            "WindowSize": 12,
-            "SeriesLength": 16,
+            "WindowSize": 9,
+            "SeriesLength": 48,
             "TrainSize": 2263,
             "Horizon": 10,
             "OutputColumnName": "Yearly consumption Y1",
@@ -142,13 +147,13 @@
         "Version": 1,
         "Type": "Trial",
         "TrainerName": "ForecastBySsa",
-        "Score": 479.54091251599255,
-        "RuntimeInSeconds": 0.025,
+        "Score": 470.86856338209452,
+        "RuntimeInSeconds": 0.016,
         "Parameter": {
           "_SCHEMA_": "e0",
           "e0": {
-            "WindowSize": 10,
-            "SeriesLength": 43,
+            "WindowSize": 9,
+            "SeriesLength": 44,
             "TrainSize": 2263,
             "Horizon": 10,
             "OutputColumnName": "Yearly consumption Y1",
@@ -167,13 +172,14 @@
     "ModelFilePath": "C:\\Users\\tomaz\\source\\repos\\GS.NET\\JJSolution.ML\\MLModel1.mlnet"
   },
   "Type": "TrainingConfig",
-  "Version": 4,
+  "Version": 5,
   "TrainingOption": {
-    "Version": 2,
+    "Version": 3,
+    "OptimizeMetric": "RMSE",
+    "Subsampling": false,
     "Type": "ForecastingTrainingOption",
     "TrainingTime": 10,
     "UseCrossValidation": false,
-    "OptimizeMetric": "RMSE",
     "Horizon": 10,
     "TimeColumn": "Device",
     "LabelColumn": "Yearly consumption Y1",
